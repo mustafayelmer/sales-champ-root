@@ -1,0 +1,8 @@
+# .idea directory for Intellij Idea
+.idea/*
+# idea setting file
+*.iml
+# .vscode directory for Visual Studio Code
+.vscode
+
+

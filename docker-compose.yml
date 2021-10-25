@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  city:
+    build: ./../sales-champ
+    ports:
+      - 8090:8090
+    environment:
+      - HTTP_PORT=8090
+      - MONGO_CONNECTION=mongodb://db:27017/sales-champ
+    depends_on:
+      - db
+
+  # docker run -it --rm -p 27017:27017 --name mongodb -v ~/projects/local_mongo/data/db:/data/db mongo
+  db:
+    image: mongo
+    container_name: db
+    # volumes:
+    #  - mongodb:/data/db
+    ports:
+      - 27017:27017
+    command: mongod
